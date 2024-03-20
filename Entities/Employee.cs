@@ -1,4 +1,7 @@
-﻿namespace ExercicioPolimorfismo01.Entities
+﻿using System.Text;
+using System.Globalization;
+
+namespace ExercicioPolimorfismo01.Entities
 {
     internal class Employee
     {
@@ -16,6 +19,13 @@
         public virtual double Payment()
         {
             return Hours * ValuePerHour;
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Name + " - $" + Payment().ToString("F2", CultureInfo.InvariantCulture));
+
+            return sb.ToString();
         }
     }
 }

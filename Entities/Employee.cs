@@ -23,7 +23,7 @@ namespace ExercicioPolimorfismo01.Entities
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(Name + " - $" + Payment().ToString("F2", CultureInfo.InvariantCulture));
+            sb.Append(Name + " - $ " + Payment().ToString("F2", CultureInfo.InvariantCulture));
 
             return sb.ToString();
         }
